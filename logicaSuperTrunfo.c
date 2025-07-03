@@ -4,7 +4,7 @@ int main() {
 
     char estado,estado1,codigo[4],codigo1[4],cidade[50],cidade1[50];
     unsigned long int populacao, populacao1;
-    int pTuristicos,pTuristicos1,opcao;
+    int pTuristicos,pTuristicos1,op1,op2;
     float area,area1,pib,pib1,densidade,pCapita,densidade1,pCapita1;
     float superPoder,superPoder1,dInvertida,dInvertida1;
     
@@ -150,191 +150,233 @@ int main() {
     printf("5. P.I.B. per Capita\n");
     printf("6. Densidade\n");
     printf("7.Super Poder\n");
+    
+    printf("Primeira opção:\n");
+    scanf(" %d",&op1);
+    printf("Segunda opção:\n");
+    scanf(" %d",&op2);
+    if(op1==op2){
 
-    scanf(" %d",&opcao);
+            printf("Digite a segunda opção sem ser igual a primeira:\n");
+            scanf(" %d",&op2);
+    
+    }
 
-    //switch com if e elsei e else para fazer a comparação.
+    //switch para fazer a comparação.
 
-    switch (opcao)
+    switch (op1)
     {
-    case 1:
+    
+        case 1:
+                 printf("carta %s:%u\ncarta %s:%u\n",cidade,populacao,cidade1,populacao1);
 
-            printf("Carta %s:%u",cidade,populacao);
-            printf("Carta %s:%u",cidade1,populacao1);
+            if(populacao==populacao1){
 
-
-            if(populacao > populacao1){
-
-                printf("Resultado: A carta %s venceu!\n",cidade);
-
-
-            }else if(populacao < populacao1){
-                
-                printf("Resultado: A carta %s venceu!\n",cidade1);
+                printf("Resultado:Empate!");
 
             }else{
 
-
-                printf("Resultado: Deu empate!\n");
-
+                printf("Resultado: A carta %s venceu!\n", ( populacao>populacao1 ) ?  cidade : cidade1);
 
             }
 
         break;
 
         case 2:
+                 printf("carta %s:%.2f\ncarta %s:%2.f\n",cidade,area,cidade1,area1);
+            if(area==area1){
 
-            printf("Carta %s:%.2f\n",cidade,area);
-            printf("Carta %s:%2f\n",cidade1,area1);
-
-
-            if(area > area1){
-
-                printf("Resultado: A carta %s venceu!\n",cidade);
-
-
-            }else if(area < area1){
-                
-                printf("Resultado: A carta %s venceu!\n",cidade1);
+                printf("Resultado:Empate!");
 
             }else{
 
-
-                printf("Resultado: Deu empate!\n");
-
+                printf("Resultado: A carta %s venceu!\n", ( area > area1 ) ?  cidade : cidade1);
 
             }
 
         break;
 
-     case 3:
+        case 3:
+                 printf("carta %s:%d\ncarta %s:%d\n",cidade,pTuristicos,cidade1,pTuristicos1);
 
-            printf("Carta %s: %d\n",cidade,pTuristicos);
-            printf("Carta %s: %d\n",cidade1,pTuristicos1);
+            if(pTuristicos==pTuristicos1){
 
-
-            if(pTuristicos > pTuristicos){
-
-                printf("Resultado: A carta %s venceu!\n",cidade);
-
-
-            }else if(pTuristicos<pTuristicos1){
-                
-                printf("Resultado: A carta %s venceu!\n",cidade1);
+                printf("Resultado:Empate!");
 
             }else{
 
-
-                printf("Resultado: Deu empate!\n");
-
+                printf("Resultado: A carta %s venceu!\n", ( pTuristicos > pTuristicos1 ) ?  cidade : cidade1);
 
             }
 
         break;
-    
+
         case 4:
+                 printf("carta %s:%.2f\ncarta %s:%2.f\n",cidade,pib,cidade1,pib1);
 
-            printf("Carta %s:%.2f\n",cidade,pib);
-            printf("Carta %s:%.2f\n",cidade1,pib1);
+            if(pib==pib1){
 
-
-            if(pib > pib1){
-
-                printf("Resultado: A carta %s venceu!\n",cidade);
-
-
-            }else if(pib < pib1){
-                
-                printf("Resultado: A carta %s venceu!\n",cidade1);
+                printf("Resultado:Empate!");
 
             }else{
 
-
-                printf("Resultado: Deu empate!\n");
-
+                printf("Resultado: A carta %s venceu!\n", ( pib > pib1 ) ?  cidade : cidade1);
 
             }
-
         break;
-        
-        case 5 :
 
-            printf("Carta %s:%.2f\n",cidade,pCapita);
-            printf("Carta %s:%.2f\n",cidade1,pCapita1);
+        case 5:
+                 printf("carta %s:%.2f\ncarta %s:%2.f\n",cidade,pCapita,cidade1,pCapita1);
 
+            if(pCapita==pCapita1){
 
-            if(pCapita > pCapita1){
-
-                printf("Resultado: A carta %s venceu!\n",cidade);
-
-
-            }else if(pCapita < pCapita1){
-                
-                printf("Resultado: A carta %s venceu!\n",cidade1);
+                printf("Resultado:Empate!");
 
             }else{
 
-
-                printf("Resultado: Deu empate!\n");
-
+                printf("Resultado: A carta %s venceu!\n", ( pCapita > pCapita1 ) ?  cidade : cidade1);
 
             }
-
         break;
-         
-        case 6 :
 
-            printf("Carta %s : %.2f\n",cidade,densidade);
-            printf("Carta %s : %.2f\n",cidade1,densidade1);
+        case 6:
+                 printf("carta %s:%.2f\ncarta %s:%2.f\n",cidade,densidade,cidade1,densidade1);
 
+            if(densidade==densidade1){
 
-            if(densidade < densidade1){
-
-                printf("Resultado: A carta %s venceu!\n",cidade);
-
-
-            }else if(densidade > densidade1){
-                
-                printf("Resultado: A carta %s venceu!\n",cidade1);
+                printf("Resultado:Empate!");
 
             }else{
 
-
-                printf("Resultado: Deu empate!\n");
-
+                printf("Resultado: A carta %s venceu!\n", ( densidade < densidade1 ) ?  cidade : cidade1);
 
             }
-
-        break;
-         
+       break;
 
         case 7:
-         
-            printf("Carta %s: %.2f\n", cidade, superPoder);
 
-            printf("Carta %s: %.2f\n",cidade1,superPoder1);
+                 printf("carta %s:%.2f\ncarta %s:%2.f\n",cidade,superPoder,cidade1,superPoder1);
 
+            if(superPoder==superPoder1){
 
-            if (superPoder > superPoder1)
-            {
-
-                printf("Resultado: A carta %s venceu!\n",cidade);
-
-
-            }else if (superPoder < superPoder1){
-                
-                printf("Resultado: A carta %s venceu!\n",cidade1);
+                printf("Resultado:Empate!");
 
             }else{
 
+                printf("Resultado: A carta %s venceu!\n", ( superPoder > superPoder1 ) ?  cidade : cidade1);
 
-                printf("Resultado: Deu empate!\n");
+            }
+       break;
 
+        default:
+            printf("Não tem essa opção no menu.\n");
+        
+        break;
+}
+
+switch (op2)
+    {
+    
+        case 1:
+                 printf("carta %s:%u\ncarta %s:%u\n",cidade,populacao,cidade1,populacao1);
+
+            if(populacao==populacao1){
+
+                printf("Resultado:Empate!");
+
+            }else{
+
+                printf("Resultado: A carta %s venceu!\n", ( populacao>populacao1 ) ?  cidade : cidade1);
 
             }
 
         break;
-         
+
+        case 2:
+                 printf("carta %s:%.2f\ncarta %s:%2.f\n",cidade,area,cidade1,area1);
+            if(area==area1){
+
+                printf("Resultado:Empate!");
+
+            }else{
+
+                printf("Resultado: A carta %s venceu!\n", ( area > area1 ) ?  cidade : cidade1);
+
+            }
+
+        break;
+
+        case 3:
+                 printf("carta %s:%d\ncarta %s:%d\n",cidade,pTuristicos,cidade1,pTuristicos1);
+
+            if(pTuristicos==pTuristicos1){
+
+                printf("Resultado:Empate!");
+
+            }else{
+
+                printf("Resultado: A carta %s venceu!\n", ( pTuristicos > pTuristicos1 ) ?  cidade : cidade1);
+
+            }
+
+        break;
+
+        case 4:
+                 printf("carta %s:%.2f\ncarta %s:%2.f\n",cidade,pib,cidade1,pib1);
+
+            if(pib==pib1){
+
+                printf("Resultado:Empate!");
+
+            }else{
+
+                printf("Resultado: A carta %s venceu!\n", ( pib > pib1 ) ?  cidade : cidade1);
+
+            }
+        break;
+
+        case 5:
+                 printf("carta %s:%.2f\ncarta %s:%2.f\n",cidade,pCapita,cidade1,pCapita1);
+
+            if(pCapita==pCapita1){
+
+                printf("Resultado:Empate!");
+
+            }else{
+
+                printf("Resultado: A carta %s venceu!\n", ( pCapita > pCapita1 ) ?  cidade : cidade1);
+
+            }
+        break;
+
+        case 6:
+                 printf("carta %s:%.2f\ncarta %s:%2.f\n",cidade,densidade,cidade1,densidade1);
+
+            if(densidade==densidade1){
+
+                printf("Resultado:Empate!");
+
+            }else{
+
+                printf("Resultado: A carta %s venceu!\n", ( densidade < densidade1 ) ?  cidade : cidade1);
+
+            }
+       break;
+
+        case 7:
+
+                 printf("carta %s:%.2f\ncarta %s:%2.f\n",cidade,superPoder,cidade1,superPoder1);
+
+            if(superPoder==superPoder1){
+
+                printf("Resultado:Empate!");
+
+            }else{
+
+                printf("Resultado: A carta %s venceu!\n", ( superPoder > superPoder1 ) ?  cidade : cidade1);
+
+            }
+       break;
 
         default:
             printf("Não tem essa opção no menu.\n");
